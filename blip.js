@@ -43,9 +43,10 @@ var nextFrame =
     };
 var range = 2200;
 var log_range = Math.log(range * 1.5);
-var default_delay = 1000;
-var absolute_mindelay = 10;
-var mindelay = default_delay;
+// gfblip is down, so let's scale this up to the normal minimum delay:
+var default_delay = 1; // was 1000.
+var absolute_mindelay = 5;
+var mindelay = Math.min(default_delay, absolute_mindelay);
 var lastBotch = 0;
 
 var updateMinDelay = function() {
